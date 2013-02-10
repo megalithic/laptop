@@ -28,6 +28,9 @@ echo "Installing GNU Compiler Collection and dependencies ..."
   successfully brew tap homebrew/dupes
   successfully brew install autoconf automake apple-gcc42
 
+echo "Installing oh-my-zsh ..."
+  successfully curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+
 echo "Installing libksba, recommended for Ruby 1.9.3 ..."
   successfully brew install libksba
 
