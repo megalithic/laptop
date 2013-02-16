@@ -91,10 +91,10 @@ echo "Symlinking zsh and oh-my-zsh files ..."
 echo "Symlinking vim files and directories ..."
   successfully ln -sf ~/dotfiles/vim ~/.vim
   successfully ln -s ~/dotfiles/vim/vimrc ~/.vimrc
-  successfully ln -s ~/dotfiles/vim/vimrc.functions ~/.vimrc.functions
-  successfully ln -s ~/dotfiles/vim/vimrc.keybindings ~/.vimrc.keybindings
-  successfully ln -s ~/dotfiles/vim/vimrc.mainsettings ~/.vimrc.mainsettings
-  successfully ln -s ~/dotfiles/vim/vimrc.pluginsettings ~/.vimrc.pluginsettings
+  successfully ln -s ~/dotfiles/vim/vimrc.functions ~/.vimrc.functions.vim
+  successfully ln -s ~/dotfiles/vim/vimrc.keybindings ~/.vimrc.keybindings.vim
+  successfully ln -s ~/dotfiles/vim/vimrc.mainsettings ~/.vimrc.mainsettings.vim
+  successfully ln -s ~/dotfiles/vim/vimrc.pluginsettings ~/.vimrc.pluginsettings.vim
 
 echo "Symlinking tmux and teamocil files ..."
   successfully ln -sf ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
