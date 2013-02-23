@@ -67,7 +67,8 @@ echo "Installing watch, used to execute a program periodically and show the outp
   successfully brew install watch
 
 echo "Installing the rest of the stuff ..."
-  brew install git mercurial vim macvim python python3 mysql node yeoman weechat zsh-lovers zsh-completions jshint ffind gist git-flow hub sshfs wget ffmpeg sqlite grep
+  brew install git mercurial vim macvim python python3 mysql node zsh-lovers zsh-completions jshint ffind gist git-flow hub sshfs wget ffmpeg sqlite grep
+  brew install weechat --ruby --python --perl
 
 echo "Installing RVM (Ruby Version Manager) and Ruby 1.9.3-p327, which becomes the default ..."
   successfully curl -L https://get.rvm.io | bash -s stable --ruby
@@ -91,6 +92,7 @@ echo "Symlinking zsh and oh-my-zsh files ..."
   successfully ln -sf ~/dotfiles/zsh/zshrc.aliases ~/.zshrc.aliases
   successfully ln -sf ~/dotfiles/zsh/zshrc.keybindings ~/.zshrc.keybindings
   successfully ln -sf ~/dotfiles/zsh/replicant.zsh-theme ~/.oh-my-zsh/themes/replicant.zsh-theme
+  successfully source ~/.zshrc
 
 echo "Symlinking vim files and directories ..."
   successfully ln -sf ~/dotfiles/vim ~/.vim
@@ -119,7 +121,7 @@ echo "Symlinking gem files ..."
 
 echo "Symlinking misc other files and directories ..."
   # so we have common apache functionality with other nix distros
-  successfully ln -sf /Library/WebServer/Documents /var/www
+  successfully sudo ln -sf /Library/WebServer/Documents /var/www
 
 echo "Your shell will now restart in order for changes to apply."
   exec $SHELL -l
