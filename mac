@@ -18,7 +18,8 @@ echo "Fixing permissions ..."
   successfully sudo chown -R `whoami` /usr/local
 
 echo "Installing Homebrew, a good OS X package manager ..."
-  successfully ruby <(curl -fsS https://raw.github.com/mxcl/homebrew/go)
+  successfully ruby -e <(curl -fsSL https://raw.github.com/mxcl/homebrew/go)
+  successfully brew doctor
   successfully brew update
 
 echo "Putting Homebrew location earlier in PATH ..."
@@ -66,7 +67,7 @@ echo "Installing watch, used to execute a program periodically and show the outp
   successfully brew install watch
 
 echo "Installing the rest of the stuff ..."
-  brew install git vim macvim python python3 mysql node yeoman weechat zsh-lovers zsh-completions jshint ffind gist git-flow hub sshfs wget ffmpeg sqlite grep
+  brew install git mercurial vim macvim python python3 mysql node yeoman weechat zsh-lovers zsh-completions jshint ffind gist git-flow hub sshfs wget ffmpeg sqlite grep
 
 echo "Installing RVM (Ruby Version Manager) and Ruby 1.9.3-p327, which becomes the default ..."
   successfully curl -L https://get.rvm.io | bash -s stable --ruby
@@ -85,19 +86,19 @@ echo "Installing critical Ruby gems for Rails development ..."
 #   successfully /usr/local/heroku/bin/heroku plugins:install git://github.com/ddollar/heroku-config.git
 
 echo "Symlinking zsh and oh-my-zsh files ..."
-  successfully ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
-  successfully ln -s ~/dotfiles/zsh/zshrc.functions ~/.zshrc.functions
-  successfully ln -s ~/dotfiles/zsh/zshrc.aliases ~/.zshrc.aliases
-  successfully ln -s ~/dotfiles/zsh/zshrc.keybindings ~/.zshrc.keybindings
-  successfully ln -s ~/dotfiles/zsh/replicant.zsh-theme ~/.oh-my-zsh/themes/replicant.zsh-theme
+  successfully ln -sf ~/dotfiles/zsh/zshrc ~/.zshrc
+  successfully ln -sf ~/dotfiles/zsh/zshrc.functions ~/.zshrc.functions
+  successfully ln -sf ~/dotfiles/zsh/zshrc.aliases ~/.zshrc.aliases
+  successfully ln -sf ~/dotfiles/zsh/zshrc.keybindings ~/.zshrc.keybindings
+  successfully ln -sf ~/dotfiles/zsh/replicant.zsh-theme ~/.oh-my-zsh/themes/replicant.zsh-theme
 
 echo "Symlinking vim files and directories ..."
   successfully ln -sf ~/dotfiles/vim ~/.vim
-  successfully ln -s ~/dotfiles/vim/vimrc ~/.vimrc
-  successfully ln -s ~/dotfiles/vim/vimrc.functions ~/.vimrc.functions.vim
-  successfully ln -s ~/dotfiles/vim/vimrc.keybindings ~/.vimrc.keybindings.vim
-  successfully ln -s ~/dotfiles/vim/vimrc.mainsettings ~/.vimrc.mainsettings.vim
-  successfully ln -s ~/dotfiles/vim/vimrc.pluginsettings ~/.vimrc.pluginsettings.vim
+  successfully ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
+  successfully ln -sf ~/dotfiles/vim/vimrc.functions ~/.vimrc.functions.vim
+  successfully ln -sf ~/dotfiles/vim/vimrc.keybindings ~/.vimrc.keybindings.vim
+  successfully ln -sf ~/dotfiles/vim/vimrc.mainsettings ~/.vimrc.mainsettings.vim
+  successfully ln -sf ~/dotfiles/vim/vimrc.pluginsettings ~/.vimrc.pluginsettings.vim
 
 echo "Symlinking tmux and teamocil files ..."
   successfully ln -sf ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
@@ -108,17 +109,17 @@ echo "Symlinking weechat directory ..."
   successfully ln -sf ~/dotfiles/weechat ~/.weechat
 
 echo "Symlinking git files ..."
-  successfully ln -s ~/dotfiles/git/gitrc ~/.gitrc
+  successfully ln -sf ~/dotfiles/git/gitrc ~/.gitrc
 
 echo "Symlinking ack files ..."
-  successfully ln -s ~/dotfiles/ack/ackrc ~/.ackrc
+  successfully ln -sf ~/dotfiles/ack/ackrc ~/.ackrc
 
 echo "Symlinking gem files ..."
-  successfully ln -s ~/dotfiles/gemrc ~/.gemrc
+  successfully ln -sf ~/dotfiles/gemrc ~/.gemrc
 
 echo "Symlinking misc other files and directories ..."
   # so we have common apache functionality with other nix distros
-  successfully ln -s /Library/WebServer/Documents /var/www
+  successfully ln -sf /Library/WebServer/Documents /var/www
 
 echo "Your shell will now restart in order for changes to apply."
   exec $SHELL -l
