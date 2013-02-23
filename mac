@@ -94,14 +94,6 @@ echo "Symlinking zsh and oh-my-zsh files ..."
   successfully ln -sf ~/dotfiles/zsh/replicant.zsh-theme ~/.oh-my-zsh/themes/replicant.zsh-theme
   successfully source ~/.zshrc
 
-echo "Symlinking vim files and directories ..."
-  successfully ln -sf ~/dotfiles/vim ~/.vim
-  successfully ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
-  successfully ln -sf ~/dotfiles/vim/vimrc.functions ~/.vimrc.functions.vim
-  successfully ln -sf ~/dotfiles/vim/vimrc.keybindings ~/.vimrc.keybindings.vim
-  successfully ln -sf ~/dotfiles/vim/vimrc.mainsettings ~/.vimrc.mainsettings.vim
-  successfully ln -sf ~/dotfiles/vim/vimrc.pluginsettings ~/.vimrc.pluginsettings.vim
-
 echo "Symlinking tmux and teamocil files ..."
   successfully ln -sf ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
   successfully ln -sf ~/dotfiles/tmux/tmux-powerlinerc.replicant ~/.tmux-powerlinerc
@@ -122,6 +114,16 @@ echo "Symlinking gem files ..."
 echo "Symlinking misc other files and directories ..."
   # so we have common apache functionality with other nix distros
   successfully sudo ln -sf /Library/WebServer/Documents /var/www
+
+echo "Symlinking vim files and directories ..."
+  successfully ln -sf ~/dotfiles/vim ~/.vim
+  successfully ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
+  successfully ln -sf ~/dotfiles/vim/vimrc.functions ~/.vimrc.functions.vim
+  successfully ln -sf ~/dotfiles/vim/vimrc.keybindings ~/.vimrc.keybindings.vim
+  successfully ln -sf ~/dotfiles/vim/vimrc.mainsettings ~/.vimrc.mainsettings.vim
+  successfully ln -sf ~/dotfiles/vim/vimrc.pluginsettings ~/.vimrc.pluginsettings.vim
+  successfully git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+  successfully vim -c ':BundleInstall!' -c ':qa!'
 
 echo "Your shell will now restart in order for changes to apply."
   exec $SHELL -l
