@@ -7,12 +7,12 @@ successfully() {
 echo "Pulling dotfiles repo ..."
   successfully cd ~ && git clone git@github.com:megalithic/dotfiles.git
 
-echo "Checking for SSH key, generating one if it doesn't exist ..."
-  [[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa
+# echo "Checking for SSH key, generating one if it doesn't exist ..."
+#   [[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa
 
-echo "Copying public key to clipboard. Paste it into your Github account ..."
-  [[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy
-  successfully open https://github.com/account/ssh
+# echo "Copying public key to clipboard. Paste it into your Github account ..."
+#   [[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy
+#   successfully open https://github.com/account/ssh
 
 echo "Fixing permissions ..."
   successfully sudo chown -R `whoami` /usr/local
